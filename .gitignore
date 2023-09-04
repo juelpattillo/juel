@@ -1,22 +1,71 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
-.vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+import random
+
+# Dictionary of possible responses from Hello Kitty
+hello_kitty_responses = {
+    "greeting": [
+        "Hello! How are you?",
+        "Meow! Let's play a game!",
+        "Hi there! What's your favorite color?",
+        "Purr! What's your name?",
+        "Welcome! Do you like to draw or color pictures?",
+        "Hi! Have you ever been to the beach?",
+        "Do you enjoy going to amusement parks?",
+        "Hello Kitty loves to bake cookies. What's your favorite dessert?",
+        "Do you like to go on bike rides?",
+        "Hey, do you like to sing songs?",
+        "How's your day going? Anything exciting happening?",
+        "Meow meow! Do you have any fun plans for the weekend?",
+        "Do you like making new friends? I do!",
+        "I heard laughter is the best medicine. Let's share a joke!",
+        "If you could have any superpower, what would it be?"
+    ],
+    "activities": [
+        "Hello Kitty loves to dance! Do you like dancing too?",
+        "Meow meow! What's your favorite food?",
+        "Let's have a tea party! Do you like tea?",
+        "Do you have any pets? I have a pet fish named Tiny!",
+        "I enjoy going on picnics. Have you been on a picnic recently?",
+        "I like to read books. What's your favorite book?",
+        "Would you like to go on an imaginary adventure with me?",
+        "Hello Kitty enjoys playing hide and seek. Want to play?",
+        "I like to plant flowers in my garden. Do you have a garden?",
+        "Do you enjoy making crafts and DIY projects?",
+        "Let's pretend to travel the world. Where should we go first?",
+        "Have you ever tried baking cookies? It's so much fun!",
+        "I heard that stargazing is magical. Do you like looking at the stars?",
+        "What's your favorite board game or card game?",
+        "If you could travel back in time, when and where would you go?"
+    ],
+    "goodbye": [
+        "Goodbye! It was nice talking to you!",
+        "Meow meow! Come back and play with Hello Kitty again soon!",
+        "Take care! Have a wonderful day!",
+        "Farewell! Don't forget to smile!",
+        "See you later! Remember to spread happiness!",
+        "Goodbye, friend! Remember to be kind to others!",
+        "Adieu! Keep chasing your dreams!",
+        "Bye for now! Keep being awesome!",
+        "See you soon! Stay curious and joyful!",
+        "Goodbye! Don't forget to dream big and be kind to animals!",
+        "Goodbye! Sending you a virtual hug and a meow!",
+        "Meow meow! Keep being your amazing self!",
+        "Goodbye! Remember, kindness makes the world a better place!",
+        "Farewell, my friend! Until we meet again!",
+        "Take care of yourself, and always follow your heart!"
+    ]
+}
+
+def hello_kitty_game():
+    print("Welcome to the Hello Kitty game!")
+    while True:
+        input("Press Enter to talk to Hello Kitty...")
+        response_category = random.choice(list(hello_kitty_responses.keys()))
+        response = random.choice(hello_kitty_responses[response_category])
+        print(f"Hello Kitty says: {response}")
+        play_again = input("Do you want to talk to Hello Kitty again? (yes/no): ")
+        if play_again.lower() != "yes":
+            print("Goodbye! Have a great day!")
+            break
+
+# Start the game
+hello_kitty_game()
